@@ -464,7 +464,7 @@ class AllPuppetPlugin(plugin.PyangPlugin):
 
     def get_full_pcore_namespace (self, path, nodename):
        pcore_namespace = path + '::' + nodename
-       pcore_namespace = pcore_namespace.replace("/","::").title()
+       pcore_namespace = pcore_namespace.replace("/","::").title().replace('-', '_')
        pcore_namespace = pcore_namespace.replace("::Data",self.module_name)
        return pcore_namespace
 
